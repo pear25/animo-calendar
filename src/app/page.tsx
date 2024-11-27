@@ -10,7 +10,7 @@ export default async function App() {
   return (
     <SessionProvider session={session}>
       <Header />
-      {!!month && <CalendarMonth month={month} />}
+      {!!session && !!month && <CalendarMonth month={month} />}
     </SessionProvider>
   );
 }

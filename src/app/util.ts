@@ -18,3 +18,19 @@ export function getMonth(): dayjs.Dayjs[][] {
   });
   return daysMatrix;
 }
+
+export function getWeek(): dayjs.Dayjs[] {
+  const startOfWeek = dayjs().startOf("week");
+  const week = new Array(DAYS_IN_WEEK).fill(null).map((_, index) => {
+    return startOfWeek.add(index, "day");
+  });
+  return week;
+}
+
+export function getTime(): dayjs.Dayjs[] {
+  const startOfDay = dayjs().startOf("day");
+  const hours = new Array(24).fill(null).map((_, index) => {
+    return startOfDay.add(index, "hour");
+  });
+  return hours;
+}
